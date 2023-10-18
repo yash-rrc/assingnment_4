@@ -34,10 +34,19 @@ try:
             # Extract the transaction type from the second column
             transaction_type = row[1]
             ### VALIDATION 1 ###
-           
+            ## ASdding the condition for false command 
+            if transaction_type != valid_transaction_types:
+                valid_record = False
+                error_message = "invalid transaction type."
+
             # Extract the transaction amount from the third column
             ### VALIDATION 2 ###
-            transaction_amount = float(row[2])
+            #Appling the try command
+            try:
+                transaction_amount = float(row[2])
+            except:
+                valid_record = False
+                error_message = 'non-numeric transaction amount.'
 
             if valid_record:
                 # Initialize the customer's account balance if it doesn't already exist
