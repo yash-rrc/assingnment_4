@@ -1,10 +1,10 @@
-# [Project Name]
+# assignment_04
 
 ## Description
-[Provide a brief description of the project]
+A program that reads through transaction records and reports the results.
 
 ## Author
-[Your name]
+yash chaudhari
 
 ## Assignment
-[Indicate the name and description of the assignment the project is related to]
+Troubleshooting and Exception Handling: Programming Beyond Expected Results is a program that reads through transaction records and reports the results.   
