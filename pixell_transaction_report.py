@@ -78,7 +78,9 @@ try:
     print("\nREJECTED RECORDS\n================")
     for record in rejected_records:
         print("REJECTED:", record)
+## adding except command with FileNotFoundError
 except FileNotFoundError as e:
     print(f"Errore: {e}")
+## adding except command with Exception
 except Exception as e:
     print(f"Error:{e}")
