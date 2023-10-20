@@ -33,3 +33,38 @@ if transaction_type not in valid_transaction_types:
                 error_message += 'Non-numeric transaction amount. '
 2 Collecting  Invalid Records to procide diffrintly if any records identified as invalid :
 rejected_records.append((row, error_message))
+## code modifaction
+prapring for Troubleshooting by coping bank_data and the deleting all files except first entry and then runnujng de buging from:
+try:
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+    with open('bank_data.csv', 'r') as csv_file:
+        reader = csv.reader(csv_file)
+to:
+print("\nREJECTED RECORDS\n================")
+## code modifaction 
+Updating code by run and Dubeg code, updating and adding some command to troubleshout in which correcting the formual and value correction is includeaded, with including  rejected records and error massage in code:
+ry:
+                # Extract the transaction amount from the third column
+                transaction_amount = float(row[2])
+            except ValueError:
+                valid_record = False
+                error_message += 'Non-numeric transaction amount. '
+
+            if valid_record:
+                # updating  the transaction_counter for valid records
+                transaction_count += 1
+                total_transaction_amount += transaction_amount
+
+                if customer_id not in customer_data:
+                    customer_data[customer_id] = {'balance': 0, 'transactions': []}
+
+                if transaction_type == 'deposit':
+                    customer_data[customer_id]['balance'] += transaction_amount
+                elif transaction_type == 'withdraw':
+                    customer_data[customer_id]['balance'] -= transaction_amount
+and
+ adding rejected records and error massage
+    for record, error in rejected_records:
+        print("REJECTED RECORD:", record)
+        print("ERROR MESSAGE:", error)
