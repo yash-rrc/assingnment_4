@@ -68,3 +68,20 @@ and
     for record, error in rejected_records:
         print("REJECTED RECORD:", record)
         print("ERROR MESSAGE:", error)
+tasting the data and comparing the code for each transaction value and appling the debug:
+
+    print("PiXELL River Transaction Report\n===============================\n")
+    for customer_id, data in customer_data.items():
+        balance = data['balance']
+        print(f"\nCustomer {customer_id} has a balance of {balance}.")
+        print("Transaction History:")
+        for transaction in data['transactions']:
+            amount, type = transaction
+            print(f"\t{type.capitalize()}: {amount}")
+
+    if transaction_count > 0:
+        print(f"\nAVERAGE TRANSACTION AMOUNT: ${(total_transaction_amount / transaction_count):,.2f}")
+    else:
+        print("\nNo valid transactions found.")
+
+    print("\nREJECTED RECORDS\n================")
